@@ -1,6 +1,6 @@
 import 'package:flutter_zenn_trend/core/domain/entity/article.dart';
 
-abstract class ArticleRepository {
+abstract class ArticleDatasource {
   Future<List<Article>> fetchRepositories(
     String title,
     String slug,
