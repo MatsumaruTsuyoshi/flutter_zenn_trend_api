@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class Article {
   final String? title;
   final String? slug;
@@ -19,4 +21,18 @@ class Article {
       likedCount: json['likedCount'],
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    // TODO: implement ==
+    return other is Article &&
+        other.title == title &&
+        other.slug == slug &&
+        other.username == username &&
+        other.likedCount == likedCount;
+  }
+
+  @override
+  // TODO: implement hashCode
+  int get hashCode => hashValues(title, slug, username, likedCount);
 }

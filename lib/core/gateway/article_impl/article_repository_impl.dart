@@ -8,16 +8,18 @@ class ArticleRepositoryImpl implements ArticleRepository {
 
   @override
   Future<List<Article>> fetchRepositories(
-    String title,
-    String slug,
-    String username,
-    int likedNum,
+    String baseUrl,
+    // String title,
+    // String slug,
+    // String username,
+    // int likedNum,
   ) async {
     return _datasource.fetchRepositories(
-      title,
-      slug,
-      username,
-      likedNum,
+      baseUrl: baseUrl,
+      // title,
+      // slug,
+      // username,
+      // likedNum,
     );
   }
 }
