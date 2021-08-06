@@ -7,13 +7,8 @@ import 'package:http/http.dart' as http;
 
 class ArticleDatasourceImpl extends ArticleDatasource {
   @override
-  Future<List<Article>> fetchRepositories({@required String? baseUrl}
-      // String title,
-      // String slug,
-      // String username,
-      // int likedNum,
-      ) async {
-    final url = Uri.parse(baseUrl ?? '');
+  Future<List<Article>> fetchRepositories() async {
+    final url = Uri.parse('https://zenn-api.netlify.app/trendTech.json');
     final result = await http.get(url);
     print(result.body);
     if (result.statusCode == 200) {

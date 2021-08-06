@@ -13,8 +13,7 @@ class ArticleListController extends StateNotifier<ArticleListState> {
   final ArticleRepository _articleRepository;
 
   Future<void> load() async {
-    final articleList = await _articleRepository
-        .fetchRepositories('https://zenn-api.netlify.app/trendTech.json');
+    final articleList = await _articleRepository.fetchRepositories();
 
     state = state.copyWith.call(
         data: articleList.map((e) {
